@@ -150,7 +150,7 @@ function settitle(par2){
 ## 魔术常量
 - `_LINE_` 获取当前行
 - `_FILE_ ` 完整路径和文件名
-- `_DIE_` 等于dirname(_FILE_),获取路径
+- `_DIR_` 等于dirname(_FILE_),获取路径
 - `_FUNCTION_` 返回函数名
 - `_CALSS_` 返回类名
 - `_TRAIT`* 需要创建‘特质（trait）’ 然后使用这个常量返回特质名，注意特质需要被 类 引用
