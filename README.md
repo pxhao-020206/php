@@ -138,7 +138,7 @@ function settitle(par2){
    $this ->title=par2;
 }
 ```
-####继承
+#### 继承
 - extends  ;  class children extends parent
 ##### 调用父类构造
 子类继承其父类后，想要调用其父类构造，可以使用 `parent::__construct()`;
