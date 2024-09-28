@@ -58,3 +58,11 @@ class Son
 ```
 4. 进入route/app.php， 新增代码：`Route::get('son1/son', 'son1.Son/index'); `
 5. 结束，url输入:`http://tp8.com/index.php/son1/son` 页面会显示123，成功；
+
+## 数据库
+### 数据库的连接
+修改.env文件和database.php文件的相关配置项即可（记得先用软件创建数据库）；
+### 查询
+`Db::name("form1") -> select();`
+#### 单条数据的查询
+使用 find方法：`Db::name("form1") -> where("id",1) ->find()` 这将查询form1表中的"id"字段为"1"的那一条数据；
