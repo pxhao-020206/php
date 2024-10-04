@@ -85,3 +85,31 @@ class Son
 `Db::name("dbname") -> replace() -> insert($newarry);` 以“修改”操作替代“插入”操作。
 #### save() 新增
 自行判断是插入操作还是修改操作；数据有主键就是修改，没有就是插入；`Db::name("dbname") -> save($newarry);`
+
+### 修改
+#### 不含主键，修改单条数据
+```php
+$newarry = ['name' => 'newname'];
+Db::name("dbname") -> where('id',1) -> update($newarry)
+```
+#### 如果包含主键，则可以省略where
+
+### 删除
+两种方式：
+```php
+//1
+Db::name("dbname")-.delete(1);
+//删除多条数据则在delete中以数组表示 👉 delete([1,2,3])
+//2
+Db::name("dbname")->where('id','1')->delete();
+```
+
+### 更新
+`exp` 👉 `Db::name("dbname")->where('id','1')->exp('name','UPPER(name)')->update(); // 将name字段中的内容更新为大写`
+
+### 自增自减
+自增 inc 👉`Db::name("dbname")->where('id','1')->inc('score',5)->update(); //id为1的这条数据中的score字段自增5，如果不写就是自增1 `
+自减 dec 👉`Db::name("dbname")->where('id','1')->dec('score',5)->update(); //id为1的这条数据中的score字段自减5，如果不写就是自减1 `
+
+### 查询表达式
+格式：where('字段名','查询表达式','查询条件');
